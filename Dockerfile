@@ -18,7 +18,7 @@ ENV ADSERVER_TEST=false \
     COCKROACH_DATABASE=coredns \
     COCKROACH_USER=username \
     ONEPASS=kxFpeiovjqagrAfCc9zhdn7b3mwEyHt4su \
-    NATSD_HOST=blc.adfreezone.org \
+    NATSD_HOST=nats.example.com \
     FE4Hs7uAehidCqpn93az=qE9FpxyA3hsudjH4fica
 
 
