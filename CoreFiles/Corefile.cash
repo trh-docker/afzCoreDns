@@ -1,0 +1,10 @@
+. {
+    reload 10s
+    hosts hostslist/adFreeHostFile.public . {
+       fallthrough .
+    }
+
+    proxy . 172.18.0.5
+    #log . "AdFreeCache - {name} {remote} | {when}"
+    cache 900s
+}
