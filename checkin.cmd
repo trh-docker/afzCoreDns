@@ -1,3 +1,3 @@
 git add -A 
-git commit -m "fixed typo in start needed cockroach"
+git commit -m "added readme"
 git push
