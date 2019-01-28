@@ -2,11 +2,12 @@ FROM quay.io/spivegin/afzas
 
 # Only need ca-certificates & openssl if want to use DNS over TLS (RFC 7858).
 RUN mkdir -p /opt/bin 
+WORKDIR /opt/dns
 
 ADD bin /opt/bin
 ADD certs /opt/dns/certs
 ADD bash/main.sh /opt/bin/main.sh
-ADD Corefile /opt/dns/Corefile
+ADD CoreFiles/Corefile /opt/dns/Corefile
 ADD https://zinc.tpnfc.us/TLM.crt /etc/ssl/certs/
 
 ENV ADSERVER_TEST=false \
@@ -28,7 +29,6 @@ RUN update-ca-certificates &&\
     ln -s /opt/bin/ads /bin/ads &&\
     rm -rf /var/lib/apt/lists/* /tmp/* /var/tmp/*
 
-WORKDIR /opt/dns
 
 EXPOSE 53 53/udp
 CMD ["/opt/bin/main.sh"]

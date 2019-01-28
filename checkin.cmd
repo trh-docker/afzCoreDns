@@ -1,3 +1,3 @@
 git add -A 
-git commit -m "added readme"
+git commit -m "flie location misplaced"
 git push
