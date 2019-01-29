@@ -1,3 +1,3 @@
 git add -A 
-git commit -m "changed up"
+git commit -m "changed corefile"
 git push

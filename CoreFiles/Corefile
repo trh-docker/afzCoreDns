@@ -1,20 +1,17 @@
-tlm {
+tlm. {
     forward . 162.243.13.85:53 138.197.128.76:53
 }
 . {
-    reload 5s
-    hosts hostslist/adFreeHostFile.public {
-        adfreepro . tls://1.1.1.1 {
-           tls_servername 1.1.1.1
-           health_check 150s
-        }
+    reload 10s
+    hosts hostslist/adFreeHostFile.public . {
+       fallthrough .
     }
 
     #adfreepro . 1.1.1.1
-    #adfreepro . tls://1.1.1.1 {
-    #       tls_servername 1.1.1.1
-    #       health_check 150s
-    #}
+    adfreepro . tls://1.1.1.1 {
+           tls_servername 1.1.1.1
+           health_check 150s
+    }
     #log . "AdFree - {name} {remote} | {when}"
+    cache 900s
 }
-
